@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
 import { useRoleStore } from '../stores/roleStore';
 import { Ionicons } from '@expo/vector-icons';
 
 export function RolesScreen() {
+  const navigation = useNavigation();
   const { roles, addRole, updateRole, deleteRole } = useRoleStore();
   const [isAdding, setIsAdding] = useState(false);
   const [newRoleName, setNewRoleName] = useState('');
@@ -25,6 +27,10 @@ export function RolesScreen() {
       setEditingId(null);
       setEditingName('');
     }
+  };
+
+  const navigateToOutcomes = (roleId: string, roleName: string) => {
+    navigation.navigate('OutcomeManagement', { roleId, roleName });
   };
 
   return (
@@ -131,7 +137,10 @@ export function RolesScreen() {
                   <Text className="text-gray-600 mt-2">
                     {role.outcomes.length} outcomes • {role.milestones.length} milestones
                   </Text>
-                  <TouchableOpacity className="mt-3 bg-deep-blue rounded-md py-2">
+                  <TouchableOpacity
+                    onPress={() => navigateToOutcomes(role.id, role.name)}
+                    className="mt-3 bg-deep-blue rounded-md py-2"
+                  >
                     <Text className="text-white text-center font-medium">
                       Manage Outcomes
                     </Text>

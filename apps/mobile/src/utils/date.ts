@@ -11,6 +11,7 @@ export function format(date: Date, formatStr: string): string {
     'EEEE': date.toLocaleDateString('en-US', { weekday: 'long' }),
     'EEE': date.toLocaleDateString('en-US', { weekday: 'short' }),
     'MMMM': date.toLocaleDateString('en-US', { month: 'long' }),
+    'MMM': date.toLocaleDateString('en-US', { month: 'short' }),
     'd': date.getDate().toString(),
   };
 
@@ -25,5 +26,11 @@ export function format(date: Date, formatStr: string): string {
 export function subDays(date: Date, days: number): Date {
   const result = new Date(date);
   result.setDate(result.getDate() - days);
+  return result;
+}
+
+export function addDays(date: Date, days: number): Date {
+  const result = new Date(date);
+  result.setDate(result.getDate() + days);
   return result;
 }
