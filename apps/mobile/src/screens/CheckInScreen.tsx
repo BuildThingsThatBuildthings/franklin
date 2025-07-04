@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useMicroStepStore } from '../stores/microStepStore';
-import { format } from 'date-fns';
+import { format } from '../utils/date';
 import { Ionicons } from '@expo/vector-icons';
 
 export function CheckInScreen() {

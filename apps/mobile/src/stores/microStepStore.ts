@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { supabase } from '../lib/supabase';
-import { format } from 'date-fns';
+import { format, subDays } from '../utils/date';
 
 interface MicroStep {
   id: string;

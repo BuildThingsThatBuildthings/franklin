@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { supabase } from '../lib/supabase';
-import { subDays, format } from 'date-fns';
+import { subDays, format } from '../utils/date';
 
 interface ProgressStore {
   weeklyData: { labels: string[]; data: number[] };
