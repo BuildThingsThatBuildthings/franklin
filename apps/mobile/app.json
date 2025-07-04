@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "Franklin",
+    "slug": "franklin",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "franklin",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FDF9F3"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.buildthingsthatbuildthings.franklin",
+      "infoPlist": {
+        "NSHealthShareUsageDescription": "Franklin uses your health data to track fitness goals.",
+        "NSHealthUpdateUsageDescription": "Franklin updates your health data when you complete activities."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FDF9F3"
+      },
+      "package": "com.buildthingsthatbuildthings.franklin",
+      "permissions": ["android.permission.ACTIVITY_RECOGNITION"]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-notifications",
+      "expo-sqlite"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "your-project-id"
+      }
+    }
+  }
+}
